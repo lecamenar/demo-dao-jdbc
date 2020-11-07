@@ -34,11 +34,19 @@ public class Program {
 			System.out.println(obj);
 		}
 		
-System.out.println("\n==== Teste 4: seller insert ====" );
+		System.out.println("\n==== Teste 4: seller insert ====" );
 		
 		Seller newSeller = new Seller(null,"Greg","greg@gmail.com",new Date(),4000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! new id = " + newSeller.getId());;
+		
+		System.out.println("\n==== Teste 5: seller update ====" );
+		
+		seller = sellerDao.findById(1);
+		seller.setName("Marta Waine");
+		sellerDao.update(seller);
+		System.out.println("Update Complete");
+	
 	}
 
 }
